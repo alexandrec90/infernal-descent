@@ -1,0 +1,100 @@
+:root {
+    --hud-bg: #333333;
+    --hud-text: #ffffff;
+    --hud-highlight: #ffcc00;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace; /* Retro feel */
+    user-select: none;
+}
+
+#game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* UI Overlay */
+#ui-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    pointer-events: none; /* Let clicks pass through to canvas */
+    display: flex;
+    justify-content: center;
+}
+
+#hud-bottom-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-top: 2px solid var(--hud-text);
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+/* Face Container */
+#hud-face {
+    width: 64px;
+    height: 64px;
+    background-color: #222;
+    border: 2px solid #555;
+}
+
+#hud-face-img {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+/* Stats */
+.hud-stat-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.hud-label {
+    font-size: 12px;
+    color: #aaaaaa;
+    font-weight: bold;
+}
+
+#hud-health-val, #hud-armor-val, #hud-ammo-val {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--hud-highlight);
+    text-shadow: 2px 2px 0px #000;
+}
+
+#hud-keys {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+/* Crosshair */
+#crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: #0f0;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 0 4px #000;
+}

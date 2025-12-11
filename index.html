@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro FPS</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="game-container"></div>
+    
+    <div id="crosshair"></div>
+
+    <div id="ui-layer">
+        <div id="hud-bottom-bar">
+            <div id="hud-face">
+                <img id="hud-face-img" src="assets/images/ui/face_healthy.png" alt="Face" onerror="this.style.backgroundColor='red'">
+            </div>
+
+            <div class="hud-stat-group">
+                <div class="hud-label">HP</div>
+                <span id="hud-health-val">100</span>
+            </div>
+
+            <div class="hud-stat-group">
+                <div class="hud-label">ARM</div>
+                <span id="hud-armor-val">0</span>
+            </div>
+
+            <div class="hud-stat-group">
+                <div class="hud-label">AMMO</div>
+                <span id="hud-ammo-val">0/0</span>
+            </div>
+        </div>
+
+        <div id="hud-keys"></div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
